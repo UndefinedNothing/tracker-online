@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f2f6fc;
+  color: #333;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background-color: #f8fafd;
+  color: black;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-style: oblique;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.user-avatar img{
+  width: 20px;
+  height: 20px;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.groups-section {
+  width: 25%;
+  background-color: #f8fafd;
+  padding: 20px;
+  border: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.tasks-section {
+  width: 75%;
+  padding: 20px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}
+
+.tasks-section-new {
+  width: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}
+
+.group-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.group-card h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.group-card-new {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.group-card-new h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #c2e7ff;
+  border-radius: 5px;
+  margin: 10px 0;
+  height: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  background-color: #3498db;
+  transition: width 0.3s;
+}
+
+.progress-text {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.group-date {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.task-date {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.task-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.task-title {
+  font-size: 1rem;
+}
+
+.task-completed {
+  text-decoration: line-through;
+  color: #7f8c8d;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.btn-edit {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-delete img{
+  height: 20px;
+}
+
+.btn-add {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.btn-add-group {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-title {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-cancel {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-save {
+  background-color: #3498db;
+  color: white;
+}
+
+.active-group {
+  border-left: 4px solid #3498db;
+  background-color: white;
+}
+
+.empty-state {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 40px 0;
+}
+
+.empty-state img {
+  width: 100px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
