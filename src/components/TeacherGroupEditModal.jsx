@@ -1,4 +1,4 @@
-const TeacherGroupModal = ({ 
+const TeacherGroupEditModal = ({ 
   show, 
   onClose, 
   onSubmit, 
@@ -20,9 +20,9 @@ const TeacherGroupModal = ({
   return (
     <div className="modal">
       <div className="modal-content">
-        <h3 className="modal-title">Добавить новую группу</h3>
+        <h3 className="modal-title">Редактировать группу</h3>
         <div className="form-group">
-          <label htmlFor="groupName">Название группы*</label>
+          <label htmlFor="groupName">Название группы</label>
           <input
             type="text"
             id="groupName"
@@ -31,7 +31,7 @@ const TeacherGroupModal = ({
             autoFocus
           />
 
-          <label htmlFor="groupDate">Срок*</label>
+          <label htmlFor="groupDate">Срок</label>
           <input
             type="date"
             id="groupDate"
@@ -39,7 +39,7 @@ const TeacherGroupModal = ({
             onChange={(e) => setDueDate(e.target.value)}
           />
 
-          <label htmlFor="groupDiff">Минимальная сложность (от 1 до 100)*</label>
+          <label htmlFor="groupDiff">Минимальная сложность (от 1 до 100)</label>
           <input
             type="number"
             min="1"
@@ -49,7 +49,7 @@ const TeacherGroupModal = ({
             onChange={(e) => setGroupDiff(e.target.value)}
           />
 
-          <label htmlFor="groupDiff1">Порог сложности "+2" (от 1 до 100)*</label>
+          <label htmlFor="groupDiff1">Порог сложности "+2" (от 1 до 100)</label>
           <input
             type="number"
             min="1"
@@ -59,7 +59,7 @@ const TeacherGroupModal = ({
             onChange={(e) => setGroupDiff1(e.target.value)}
           />
 
-          <label htmlFor="groupDiff2">Порог сложности "+3" (от 1 до 100)*</label>
+          <label htmlFor="groupDiff2">Порог сложности "+3" (от 1 до 100)</label>
           <input
             type="number"
             min="1"
@@ -69,7 +69,7 @@ const TeacherGroupModal = ({
             onChange={(e) => setGroupDiff2(e.target.value)}
           />
 
-          <label htmlFor="groupGoal">Количество задач*</label>
+          <label htmlFor="groupGoal">Количество задач</label>
           <input
             type="number"
             min="1"
@@ -94,4 +94,4 @@ const TeacherGroupModal = ({
   );
 };
 
-export default TeacherGroupModal;
+export default TeacherGroupEditModal;

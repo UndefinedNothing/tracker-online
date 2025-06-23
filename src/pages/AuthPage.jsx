@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AuthPage.css';
 import axios from 'axios';
+import logo from "../assets/logo1.png";
 
 const api = axios.create({
   baseURL: 'https://motivationappbackend-uyxp.onrender.com/api/v1',
@@ -52,10 +53,6 @@ function AuthPage() {
     if (validate()) {
       if (isLogin) {
         // Отправка данных для входа
-        console.log('Login data:', {
-          login: formData.login,
-          password: formData.password
-        });
         try {
           const response = await api.post('/auth/login', {
             login: formData.login,
@@ -68,12 +65,6 @@ function AuthPage() {
         }
       } else {
         // Отправка данных для регистрации
-        console.log('Register data:', {
-          login: formData.login,
-          name: formData.name,
-          role: formData.role,
-          password: formData.password
-        });
         try {
           const response = await api.post('/auth/register', {
             login: formData.login,
@@ -96,7 +87,7 @@ function AuthPage() {
     <div className="auth-container">
       <div className="auth-form">
         <div className="logo1">
-          <img src="logo1.png" alt="Лого" />
+          <img src={logo} alt="Лого" />
           <h1>CodeProgress</h1>
         </div>
         <h2>{isLogin ? 'Вход' : 'Регистрация'}</h2>
@@ -109,6 +100,7 @@ function AuthPage() {
               name="login"
               value={formData.login}
               onChange={handleChange}
+              autoFocus
             />
             {errors.login && <span className="error">{errors.login}</span>}
           </div>

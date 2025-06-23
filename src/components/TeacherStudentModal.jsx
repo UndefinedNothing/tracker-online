@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TeacherStudentModal = ({ 
   show, 
   onClose, 
@@ -16,7 +14,7 @@ const TeacherStudentModal = ({
       <div className="modal-content">
         <h3 className="modal-title">Добавить студента</h3>
         <div className="form-group">
-          <label htmlFor="taskTitle">Логин студента</label>
+          <label htmlFor="taskTitle">Логин студента*</label>
           <input
             type="text"
             id="taskTitle"
@@ -26,7 +24,7 @@ const TeacherStudentModal = ({
             autoFocus
           />
 
-          <label htmlFor="taskLink">Цель студента</label>
+          <label htmlFor="taskLink">Цель студента*</label>
           <input
             type="number"
             min="1"
